@@ -1,0 +1,86 @@
+@import url('https://cdn.jsdelivr.net/npm/reset-css@3.0.0/reset.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+/* Whole Body */
+body {
+    background-color: #ADE8F4;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0px 16px;
+}
+
+.navbar {
+    padding: 16px;
+    background-color: #007289;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__link a {
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    :hover {
+        cursor: pointer;
+    }
+}
+
+.bar__item > a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.2em;
+    font-family: 'Inter', sans-serif;
+    padding: 8px;
+}
+
+.bar__item:nth-child(2) > a {
+    font-size: 1em;
+}
+/* Header Ends Here */
+
+/* Footer Starts Here */
+.footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer >p {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    color: #03045E;
+}
+
+.footer > p > a {
+    text-decoration: none;
+    color: #03045E;
+/* Footer Ends Here */
+
+/* Making the website responsive */
+@media (min-width: 576px) {
+    .container {
+        --max-width: 576px;
+        max-width: calc(var(--max-width) - 32px);
+    }
+}
+
+@media (min-width: 768px) {
+    
+}
+
+@media (min-width: 992px) {
+    
+}
+
+@media (min-width: 1400px) {
+}
