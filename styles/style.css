@@ -9,6 +9,7 @@ body {
 
 .container {
     margin: 0 auto;
+    max-width: 100%;
     padding: 0px 16px;
 }
 
@@ -48,7 +49,7 @@ body {
 #input__text {
     margin: 32px 0px;
     width: 100%;
-    max-width: 544px;
+    max-width: 576px;
     height: 196px;
     box-sizing: border-box;
     resize: none;
@@ -67,7 +68,7 @@ body {
     border-radius: 21px;
     background-color: #48CAE4;
     width: 100%;
-    max-width: 544px;
+    max-width: 576px;
     height: 154px;
     font-family: 'Poppins', sans-serif;
     color: #03045E;
@@ -96,18 +97,30 @@ body {
     color: #FFFFFF;
     border-radius: 21px;
     width: 100%;
-    max-width: 544px;
+    max-width: 576px;
     height: 50px;
     font-size: 1.25em;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
     box-shadow: 23px 24px 54px -4px #03045E;
 }
+
+/* Cloud Generator */
+.main__word-cloud {
+    margin: 32px 0px 0px 0px;
+    width: 100%;
+    max-width: 576px;
+    height: 433px;
+    background-color: #0077B6;
+    border: 1px solid #000000;
+    border-radius: 31px;
+}
 /* Main Ends Here */
 
 
 /* Footer Starts Here */
 .footer {
+    margin: 0px 0px 16px 0px;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -124,23 +137,45 @@ body {
 .footer > p > a {
     text-decoration: none;
     color: #03045E;
+}
 /* Footer Ends Here */
 
 /* Making the website responsive */
 @media (min-width: 576px) {
     .container {
         --max-width: 576px;
-        max-width: calc(var(--max-width) - 32px);
+        max-width: calc(var(--max-width) - 40px);
+    }
+
+    .main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #input__text {
+        width: 408px;
+        max-width: 785px;
+        height: 417px;
+    }
+
+    .output__website-header {
+        margin: 32px 0px;
+        height: 200px;
+        width: 215px;
     }
 }
 
 @media (min-width: 768px) {
-    
-}
+    .container {
+        --max-width: 768px;
+    }
 
-@media (min-width: 992px) {
-    
-}
+    #input__text {
+        width: 490px;
+    }
 
-@media (min-width: 1400px) {
+    #output__website-header {
+        width: 250px;
+    }
 }
