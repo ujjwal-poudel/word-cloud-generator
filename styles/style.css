@@ -106,14 +106,35 @@ body {
 }
 
 /* Cloud Generator */
+/* Cloud Generator */
 .main__word-cloud {
     margin: 32px 0px 0px 0px;
     width: 100%;
     max-width: 576px;
-    height: 433px;
+    height: 100%;
     background-color: #0077B6;
     border: 1px solid #000000;
     border-radius: 31px;
+    display: none;
+    overflow-wrap: break-word;
+    padding: 16px;
+}
+
+/* Define different colors for words */
+.word-color-1 { color: #FF5722; } /* Orange */
+.word-color-2 { color: #4CAF50; } /* Green */
+.word-color-3 { color: #F44336; } /* Red */
+.word-color-4 { color: #FFC107; } /* Yellow */
+.word-color-5 { color: #E91E63; } /* Pink */
+.word-color-6 { color: #03A9F4; } /* Blue */
+.word-color-7 { color: #9C27B0; } /* Purple */
+.word-color-8 { color: #009688; } /* Teal */
+.word-color-9 { color: #795548; } /* Brown */
+.word-color-10 { color: #607D8B; } /* Gray */
+
+/* Increasing the default font size of words */
+.main__word-cloud span {
+    font-size: 1.5em; 
 }
 /* Main Ends Here */
 
