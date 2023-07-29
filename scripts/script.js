@@ -10,11 +10,11 @@ function checkInformation() {
   else {
     // Checking if the information is a link or other random text
     if (information.value.startsWith("http://") || information.value.startsWith("https://")) {
-        alert("It is a link");
+        console.log("It is a link");
     }
 
     else {
-        alert("It is not a link");
+        console.log("It is a random text");
     }
   }
 };
