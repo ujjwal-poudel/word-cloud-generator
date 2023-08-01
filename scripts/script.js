@@ -17,6 +17,7 @@ function checkInformation() {
       extractText(information.value); // Asynchronous operation, so no need to store it in a variable
     } else {
       console.log("It is random text");
+      extractTextTwo(information.value);
     }
   }
 }
@@ -28,6 +29,14 @@ submit.addEventListener("click", function () {
   document.getElementById("main__word-cloud").style.display = "block";
   checkInformation();
 });
+
+// Creating a function to extract the text content from the given text
+function extractTextTwo(textContent) {
+  let element = document.createElement("div");
+  element.innerHTML = textContent;
+
+  generateWordCloud(element.textContent.trim());
+}
 
 // Creating a function to extract the text content from a website
 async function extractText(webURL) {
