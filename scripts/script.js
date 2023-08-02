@@ -1,3 +1,26 @@
+// Website Popper starts
+let firstParagraph = document.getElementById("first-line");
+let secondParagraph = document.getElementById("second-line");
+
+let jokes = [
+  ["Why do programmers prefer dark mode?", "Because light attracts bugs"],
+  ["Why did the programmer quit his job?", "Because he didn't get arrays"],
+  ["Why did the developer go broke?", "Because he used up all his cache"],
+  ["Why do programmers always mix up Christmas and Halloween?", "Because Oct 31 == Dec 25!"],
+  ["Why do Java programmers wear glasses?", "Because they don't C#"],
+  ["Why do programmers hate nature?", "It has too many bugs!"],
+  ["Why do programmers always mix up their left and right?", "Because they're not always in their right mind!"]
+];
+
+let randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+generateJoke();
+
+function generateJoke() {
+  firstParagraph.textContent = randomJoke[0];
+  secondParagraph.textContent = randomJoke[1];
+}
+// Website Popper ends
+
 // Hide the word cloud container by default
 document.getElementById("main__word-cloud").style.display = "none";
 
@@ -25,7 +48,7 @@ function checkInformation() {
 let submit = document.getElementById("submit-generate");
 
 submit.addEventListener("click", function () {
-  document.getElementById("footer").style.display = "none";
+  document.getElementById("footer").style.bottom = "unset";
   document.getElementById("main__word-cloud").style.display = "block";
   checkInformation();
 });
@@ -76,6 +99,10 @@ function generateWordCloud(text) {
   console.log(text);
 
   const stopWords = [
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
     "a",
     "an",
     "and",
@@ -257,6 +284,7 @@ function generateWordCloud(text) {
     "your",
   ];
   
+
   for (let i = 0; i < stopWords.length; i++) {
     let regex = new RegExp("\\b" + stopWords[i] + "\\b", "g");
     text = text.replace(regex, "");
@@ -270,17 +298,20 @@ function generateWordCloud(text) {
 
   let uniqueIndex = 0;
 
-  for(let i=0; i<words.length; i++) {
+  for(let i=1; i<words.length; i++) {
     if (words[i] === words[i-1]) {
       unique[uniqueIndex][1]++;
     } else {
       uniqueIndex++;
       unique[uniqueIndex] = [words[i], 1];
-      unique.sort(byDuplicate);
-      function byDuplicate(a, b) {
-        return b[1] - a[1];
-      }
     }
+  }
+  unique.sort(function (a, b) {
+    return a[0].localeCompare(b[0]);
+  });
+  unique.sort(function (a, b) {
+    return b[1] - a[1];
+  });
 
     unique = unique.slice(0, 100);
 
@@ -321,4 +352,4 @@ function generateWordCloud(text) {
       }
     }
   }
-};    
+  
