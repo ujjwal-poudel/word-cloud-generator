@@ -35,13 +35,13 @@ body {
     text-decoration: none;
     color: #FFFFFF;
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 2em;
     font-family: 'Inter', sans-serif;
     padding: 8px;
 }
 
 .bar__item:nth-child(2) > a {
-    font-size: 1em;
+    font-size: 1.2em;
 }
 /* Header Ends Here */
 
@@ -53,18 +53,37 @@ body {
     height: 196px;
     box-sizing: border-box;
     resize: none;
+    outline: none;
+    box-sizing: border-box;
     border: solid 3px #03045E;
     border-radius: 21px;
     box-shadow: 4px 5px 20px 0px #03045E;
-    outline: none;
-    box-sizing: border-box;
     padding: 1em;
     font-family: 'Inter', sans-serif;
     font-style: italic;
     font-weight: 300;
+    overflow: auto;
+}
+
+/* Adding a custom scrollbar style for the specific textarea */
+#input__text::-webkit-scrollbar {
+  width: 12px;
+}
+
+#input__text::-webkit-scrollbar-track {
+  background: none;
+}
+
+#input__text::-webkit-scrollbar-thumb {
+  background: none;
+}
+
+#input__text::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .output__website-header {
+    display: none;
     border-radius: 21px;
     background-color: #48CAE4;
     width: 100%;
@@ -105,32 +124,33 @@ body {
     box-shadow: 23px 24px 54px -4px #03045E;
 }
 
-/* Cloud Generator */
-/* Cloud Generator */
+/* Cloud Generator Starts*/
 .main__word-cloud {
-    margin: 32px 0px 0px 0px;
-    width: 100%;
+    /* margin: 32px 0px 0px 0px; */
+    margin: 2em auto;
+    /* width: 100%; */
     max-width: 576px;
-    height: 100%;
-    background-color: #0077B6;
+    /* height: 100%; */
+    background-color: #144552;
     border: 1px solid #000000;
     border-radius: 31px;
-    display: none;
+    /* display: none; */
     overflow-wrap: break-word;
-    padding: 16px;
+    padding: 24px;
 }
+/* Cloud Generator Ends*/
 
 /* Define different colors for words */
-.word-color-1 { color: #FF5722; } /* Orange */
-.word-color-2 { color: #4CAF50; } /* Green */
-.word-color-3 { color: #F44336; } /* Red */
-.word-color-4 { color: #FFC107; } /* Yellow */
-.word-color-5 { color: #E91E63; } /* Pink */
-.word-color-6 { color: #03A9F4; } /* Blue */
-.word-color-7 { color: #9C27B0; } /* Purple */
-.word-color-8 { color: #009688; } /* Teal */
-.word-color-9 { color: #795548; } /* Brown */
-.word-color-10 { color: #607D8B; } /* Gray */
+.word-color-1 { color: #FF0000; } 
+.word-color-2 { color: #4CAF50; } 
+.word-color-3 { color: #FF1DCE; } 
+.word-color-4 { color: #FFC107; } 
+.word-color-5 { color: #8F00FF; } 
+.word-color-6 { color: #0000FF; } 
+.word-color-7 { color: #9C27B0; } 
+.word-color-8 { color: #00FF00; } 
+.word-color-9 { color: #FDFF00; } 
+.word-color-10 { color: #FF7800; }
 
 /* Increasing the default font size of words */
 .main__word-cloud span {
@@ -170,21 +190,13 @@ body {
 
     .main {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    #input__text {
-        width: 408px;
-        max-width: 785px;
-        height: 417px;
+        flex-direction: column;
     }
 
     .output__website-header {
-        margin: 32px 0px;
-        height: 200px;
-        width: 215px;
+        display: none;
     }
+
 }
 
 @media (min-width: 768px) {
@@ -192,11 +204,42 @@ body {
         --max-width: 768px;
     }
 
-    #input__text {
-        width: 490px;
+    .main {
+        flex-direction: row;
+        justify-content: space-around;
     }
 
-    #output__website-header {
+    #input__text {
+        min-width: 392px;
+        height: 300px;
+    }
+
+    .output__website-header {
+        display: block;
+        margin: 32px 0px;
+        width: 250px;
+        height: 220px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        --max-width: 992px;
+    }
+
+    .main {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #input__text {
+        min-width: 600px;
+        height: 400px;
+    }
+
+    .output__website-header {
+        display: block;
+        margin: 32px 0px;
         width: 250px;
     }
 }
